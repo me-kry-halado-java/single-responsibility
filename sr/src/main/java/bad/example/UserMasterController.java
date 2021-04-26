@@ -1,10 +1,10 @@
-package hu.meiit.sweng.solid.singleresponsibility;
+package bad.example;
 
+import bad.example.dto.RegionAmap;
+import bad.example.http.HttpAdapterUrlConnection;
+import bad.example.repository.RegionAmapMapperCustom;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import hu.meiit.sweng.solid.singleresponsibility.dto.RegionAmap;
-import hu.meiit.sweng.solid.singleresponsibility.http.HttpAdapterUrlConnection;
-import hu.meiit.sweng.solid.singleresponsibility.repository.RegionAmapMapperCustom;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;

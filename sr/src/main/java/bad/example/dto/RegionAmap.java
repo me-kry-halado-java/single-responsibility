@@ -1,4 +1,4 @@
-package hu.meiit.sweng.solid.singleresponsibility.dto;
+package bad.example.dto;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package hu.meiit.sweng.solid.singleresponsibility.http;
+package bad.example.http;
 
 import lombok.RequiredArgsConstructor;
 
