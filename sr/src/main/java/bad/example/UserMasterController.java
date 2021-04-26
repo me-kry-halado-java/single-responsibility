@@ -1,20 +1,23 @@
 package bad.example;
 
 import bad.example.dto.RegionAmap;
-import bad.example.http.HttpAdapterUrlConnection;
+import bad.example.http.HttpAdapter;
 import bad.example.repository.RegionAmapMapperCustom;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import lombok.RequiredArgsConstructor;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
+@RequiredArgsConstructor
 public class UserMasterController {
-    private RegionAmapMapperCustom regionAmapMapperCustom;
+    private final RegionAmapMapperCustom regionAmapMapperCustom;
+    private final HttpAdapter httpAdapter;
 
-    public void getMasterList() throws Exception {
-        InputStream inStream = new HttpAdapterUrlConnection().doGet("https://restapi.amap.com/v3/config/district?subdistrict=4&key=1e1f1c04c8b72367efe4431de2f038f5", null);
+    public void getMasterList() {
+        InputStream inStream = httpAdapter.doGet("https://restapi.amap.com/v3/config/district?subdistrict=4&key=1e1f1c04c8b72367efe4431de2f038f5", null);
         String jsonString = null;
         try (Scanner scanner = new Scanner(inStream, StandardCharsets.UTF_8.name())) {
             jsonString = scanner.useDelimiter("\\A").next();
